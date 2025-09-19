@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Apply - Recruitment Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=80&auto=format&fit=crop&crop=faces" alt="logo" class="logo">
+        <h1>Recruitment Portal</h1>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="post-job.html" class="nav-link">Post Job</a>
+        <a href="apply.html" class="nav-link active">Apply</a>
+      </nav>
+      <div class="header-actions">
+        <button id="darkToggleApply" class="icon-btn">🌓</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container form-card">
+      <h2>Apply for Job</h2>
+      <div id="applyJobInfo" class="apply-job-info"></div>
+
+      <form id="applyForm" class="form-grid">
+        <div>
+          <label>Your Name</label>
+          <input id="applicantName" required placeholder="Full name">
+        </div>
+        <div>
+          <label>Your Email</label>
+          <input id="applicantEmail" type="email" required placeholder="you@example.com">
+        </div>
+        <div>
+          <label>Resume Link</label>
+          <input id="resume" type="url" required placeholder="Link to resume (Drive/GitHub)">
+        </div>
+        <div class="full">
+          <label>Cover Letter</label>
+          <textarea id="coverLetter" required placeholder="Short cover letter..."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Submit Application</button>
+          <a href="index.html" class="btn ghost">Back to Home</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="yearApply"></span> Recruitment Portal</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

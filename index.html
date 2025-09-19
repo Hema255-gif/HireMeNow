@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HireMeNow - Recruitment Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Hire<span>MeNow</span></div>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="post-job.html">Post Job</a>
+      <a href="apply.html">Apply</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Find Your <span>Dream Job</span> Today</h1>
+      <p>Where top talent meets the best opportunities.</p>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search jobs by title, skills, or location...">
+        <select id="filterType">
+          <option value="">All Types</option>
+          <option value="Full-time">Full-time</option>
+          <option value="Internship">Internship</option>
+          <option value="Remote">Remote</option>
+        </select>
+        <button onclick="searchJobs()">🔍 Search</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jobs Section -->
+  <section class="jobs">
+    <h2>🌟 Latest Opportunities</h2>
+    <div id="jobList" class="job-list"></div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="info-section">
+    <h2>About Us</h2>
+    <p>HireMeNow is your trusted recruitment portal, connecting passionate job seekers with top companies. We make hiring and applying simple, modern, and efficient.</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="info-section contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@hiremenow.com</p>
+    <p>Phone: +91 98765 43210</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 HireMeNow | Designed with ❤️</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

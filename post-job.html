@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post a Job | Recruitment Portal</title>
+  <style>
+    /* ==== General Reset ==== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ==== Navbar ==== */
+    .navbar {
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #0077ff;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      margin: 0 15px;
+      position: relative;
+    }
+
+    .navbar a::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #0077ff;
+      transition: width 0.3s;
+      margin-top: 3px;
+    }
+
+    .navbar a:hover::after {
+      width: 100%;
+    }
+
+    /* ==== Page Container ==== */
+    .container {
+      max-width: 600px;
+      margin: 120px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ==== Heading ==== */
+    .container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #0077ff;
+    }
+
+    /* ==== Form ==== */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form label {
+      margin: 10px 0 5px;
+      font-weight: 500;
+      color: #444;
+    }
+
+    form input,
+    form select,
+    form textarea {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
+      transition: border 0.3s, box-shadow 0.3s;
+    }
+
+    form input:focus,
+    form select:focus,
+    form textarea:focus {
+      border: 1px solid #0077ff;
+      box-shadow: 0 0 6px rgba(0, 119, 255, 0.2);
+    }
+
+    /* ==== Submit Button ==== */
+    form button {
+      margin-top: 20px;
+      padding: 12px;
+      background: linear-gradient(45deg, #0077ff, #00c6ff);
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 119, 255, 0.3);
+    }
+
+    /* ==== Responsive ==== */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 15px 20px;
+      }
+
+      .container {
+        margin: 100px 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Recruitment Portal</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="post-job.html">Post Job</a>
+      <a href="apply.html">Apply</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Post Job Form -->
+  <div class="container">
+    <h2>Post a Job</h2>
+    <form id="postJobForm">
+      <label for="title">Job Title</label>
+      <input type="text" id="title" placeholder="Enter job title" required>
+
+      <label for="company">Company Name</label>
+      <input type="text" id="company" placeholder="Enter company name" required>
+
+      <label for="location">Location</label>
+      <input type="text" id="location" placeholder="Enter location" required>
+
+      <label for="skills">Skills Required</label>
+      <input type="text" id="skills" placeholder="e.g. HTML, CSS, JS" required>
+
+      <label for="type">Job Type</label>
+      <select id="type" required>
+        <option value="">Select type</option>
+        <option value="Full-time">Full-time</option>
+        <option value="Internship">Internship</option>
+        <option value="Remote">Remote</option>
+      </select>
+
+      <button type="submit">Post Job</button>
+    </form>
+  </div>
+
+  <script>
+    // Save job to localStorage
+    document.getElementById("postJobForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const job = {
+        title: document.getElementById("title").value,
+        company: document.getElementById("company").value,
+        location: document.getElementById("location").value,
+        skills: document.getElementById("skills").value,
+        type: document.getElementById("type").value,
+      };
+
+      let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+      jobs.push(job);
+      localStorage.setItem("jobs", JSON.stringify(jobs));
+
+      alert("Job posted successfully!");
+      window.location.href = "index.html"; // redirect to homepage
+    });
+  </script>
+
+</body>
+</html>
